@@ -1,0 +1,460 @@
+  
+  /**
+   * Remove default margin & padding
+   */
+  
+   * {
+    margin: 0;
+    padding: 0;
+    transition: all 0.5s ease;
+  }
+  
+  /**
+   * more-intuitive box-sizing model.
+   */
+  
+  *, *::before, *::after { box-sizing: border-box; }
+  
+  /**
+   * Default font-family 
+   */
+  
+  html { font-family: "Inter", sans-serif; }
+  
+  /**
+   * All heading color 
+   */
+  
+  h1, h2, h3, h4, h5, h6 { color: hsl(0, 0%, 100%); }
+  
+  /**
+   * Add default background & color,
+   * Improve text rendering
+   */
+  
+  body {
+    background: hsl(222, 25%, 10%);
+    color: hsl(0, 0%, 88%);
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /**
+   * change image default
+   */
+  
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    object-fit: cover;
+  }
+  
+  /**
+   * remove form default
+   */
+  
+  input, button, select {
+    font: inherit;
+    background: none;
+    border: none;
+    outline: none;
+  }
+  
+  /**
+   * add button default
+   */
+  
+  button {
+    color: hsl(0, 0%, 88%);
+    cursor: pointer;
+  }
+  
+  /**
+   * remove list item marker 
+   */
+  
+  li { list-style: none; }
+  
+  /**
+   * change link default
+   */
+  
+  a {
+    text-decoration: none;
+    display: block;
+    color: hsl(0, 0%, 88%);
+  }
+  
+  /**
+   * change default scrollbar style 
+   */
+  
+  ::-webkit-scrollbar {
+    background: transparent;
+    border-left: 1px solid hsl(218, 39%, 14%);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(214, 84%, 56%);
+    border-radius: 5em;
+    border: 3px solid hsl(222, 25%, 10%);
+  }
+  
+  
+  /*-------------------------------------*\
+  \*-------------------------------------*/
+  
+  header, nav { background: hsl(222, 25%, 10%);}
+  
+  .navbar
+  {
+    padding: 0 120px;
+  }
+  
+  .section-heading {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+  }
+  
+  
+  
+  
+  
+  /*-------------------------------------*\
+    #MAIN
+  \*-------------------------------------*/
+  
+  /**
+   * main container style 
+   */
+  
+  .container {
+    max-width: 1440px;
+    margin: auto;
+  }
+  
+  
+  
+  
+  
+  /*-------------------------------------*\
+    #NAVBAR
+  \*-------------------------------------*/
+  
+  /**
+   * navbar style 
+   */
+  
+  .navbar {
+    height: 100px;
+    display:         flex;
+    justify-content: space-between;
+    align-items:     center;
+  }
+  
+  /**
+   * small screen menu button style 
+   */
+  
+  .navbar-menu-btn { display: none; }
+  .navbar-menu-btn{
+   background-color: white;
+  }
+  
+  /**
+   * navbar navigation style 
+   */
+  
+   nav { margin-right: 200px; }
+
+   .navbar-nav {
+    display:flex;
+    column-gap: 4rem;
+  
+  }
+  .navbar-nav li {
+    position: relative;
+  
+  }
+  .navbar-nav a{
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(250, 244, 244);
+  }
+  .navbar-nav a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: rgb(241, 239, 238);
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.4s all linear;
+  }
+  .navbar-link:hover { color: hsl(214, 84%, 56%);}
+  
+  .navbar-nav a:hover::after, .navbar-nav .home-active::after {
+    width: 100%;
+  }
+  
+ 
+  /**
+   * navbar form & button style 
+   */
+  
+  .navbar-actions {
+    display:     flex;
+    align-items: center;
+  }
+  
+  .navbar-form {
+    position: relative;
+    margin-right: 50px;
+  }
+  
+  .navbar-form-search {
+    background: hsl(218, 39%, 14%);
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 15px;
+    color: hsl(0, 0%, 88%);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    margin-right: 150px;
+  }
+  
+  .navbar-form-btn {
+    background: none;
+    position: absolute;
+    top:   calc(50% - 10px);
+    right: 10px;
+    padding-left: 30px;
+  }
+  
+  .navbar-form-btn ion-icon,
+  .navbar-search-btn ion-icon {
+    font-size: 20px;
+    color: hsl(214, 84%, 56%);
+    --ionicon-stroke-width: 50px;
+  }
+  
+  .navbar-form-btn:hover ion-icon,
+  .navbar-form-search::placeholder { color: hsl(0, 0%, 88%);}
+  
+  /**
+   * navbar-form close button & navbar search button
+   * for small device 
+   */
+  
+  .navbar-form-close,
+  .navbar-search-btn { display: none; }
+  .navbar-brand img{
+    width: 80%;
+    height: 100%;
+  }
+  
+  
+  
+  
+  .profile-container {
+   
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .profile-text-container {
+    margin: 0 20px;
+  }
+  .profile-text-container i{
+    padding-left: 10px;
+    position: absolute;
+  }
+  .profile-picture {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /*-------------------------------------*\
+    #MOIVES SECTION
+  \*-------------------------------------*/
+  
+  
+  /**
+   * movies grid 
+   */
+  
+  .movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+  
+  .movie-card {
+    /**
+     * variable for scaling overlay element on card hover 
+     */
+    --scale: 0.8;
+  
+    cursor: pointer;
+  }
+  
+  .movie-card .card-head {
+    position: relative;
+    height: 250px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    overflow: hidden;
+  }
+  
+  .movie-card:hover .card-img { transform: scale(1.1); }
+  
+  .movie-card .card-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    
+  }
+  
+  .movie-card:hover .card-overlay { opacity: 1; }
+  
+  .movie-card .bookmark,
+  .movie-card .rating {
+    position: absolute;
+    top: 15px;
+    padding: 6px;
+    border-radius: 10px;
+    color: hsl(214, 84%, 56%);
+    transform: scale(var(--scale));
+  }
+  
+  .movie-card .bookmark {
+    background: hsl(218, 39%, 14%);
+    left: 15px;
+  }
+  
+  .movie-card .bookmark:hover { color: hsl(45, 100%, 54%); }
+  
+  .movie-card .rating {
+    display:     flex;
+    align-items: center;
+    right: 15px;
+    background: hsla(218, 39%, 14%, 0.8);
+  }
+  
+  .movie-card .rating span {
+    color: hsl(0, 0%, 100%);
+    font-size: 13px;
+    font-weight: 500;
+    margin-left: 5px;
+  }
+  
+  .movie-card ion-icon {
+    font-size: 16px;
+    display: block;
+    --ionicon-stroke-width: 50px;
+  }
+  
+  .movie-card .play {
+    position: absolute;
+    top:  50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--scale));
+  }
+  
+  .movie-card .play ion-icon {
+    font-size: 60px;
+    --ionicon-stroke-width: 20px;
+  }
+  
+  .movie-card:hover :is(.bookmark, .rating, .play) { --scale: 1; }
+  
+  .movie-card .card-title {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  
+  .movie-card:hover .card-title { color: hsl(214, 84%, 56%);}
+  
+  .movie-card .card-info {
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .movie-card { margin-right: 8px; }
+  
+  
+  
+  /*-------------------------------------*\
+    #FOOTER SECTION
+  \*-------------------------------------*/
+  
+  footer {
+    background: var(--rich-black-fogra-30);
+    padding: 80px 120px 40px;
+  }
+  
+  .footer-content {
+    display:         flex;
+    justify-content: space-between;
+    align-items:     flex-start;
+    border-bottom: 1px solid hsla(218, 39%, 14%, 0.8);
+    padding-bottom: 80px;
+  }
+  
+  .footer-brand {
+    max-width: 250px;
+    margin-right: 130px;
+  }
+  
+  .footer-logo {
+    width: 100px;
+    margin-bottom: 30px;
+  }
+  
+  .slogan {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .social-link a { display: inline-block; }
+  
+  .social-link ion-icon {
+    font-size: 25px;
+    margin-right: 20px;
+  }
+  
+  .footer-links {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    align-items: flex-end;
+  }
+  
+  .link-heading { margin-bottom: 20px; }
+  
+  .link-item { font-size: 14px; }
+  
+  ul .link-item:not(:last-child) { margin-bottom: 10px; }
+  
+  .link-item:hover a { color: hsl(214, 84%, 56%); }
+  
+  

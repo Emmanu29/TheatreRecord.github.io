@@ -1,0 +1,745 @@
+
+/**
+ * Remove default margin & padding
+ */
+
+ * {
+  margin: 0;
+  padding: 0;
+  transition: all 0.5s ease;
+  box-sizing: border-box; 
+}
+
+/**
+ * more-intuitive box-sizing model.
+ */
+
+
+
+/**
+ * Default font-family 
+ */
+
+html { font-family: "Inter", sans-serif; }
+
+/**
+ * All heading color 
+ */
+
+h1, h2, h3, h4, h5, h6 { color: hsl(0, 0%, 100%); }
+
+/**
+ * Add default background & color,
+ * Improve text rendering
+ */
+
+body {
+  background: hsl(222, 25%, 10%);
+  color:  hsl(0, 0%, 88%);
+  -webkit-font-smoothing: antialiased;
+}
+
+/**
+ * change image default
+ */
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  object-fit: cover;
+}
+
+/**
+ * remove form default
+ */
+
+input, button, select {
+  font: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/**
+ * add button default
+ */
+
+button {
+  color:  hsl(0, 0%, 88%);
+  cursor: pointer;
+}
+
+/**
+ * remove list item marker 
+ */
+
+li { list-style: none; }
+
+/**
+ * change link default
+ */
+
+a {
+  text-decoration: none;
+  display: block;
+  color:  hsl(0, 0%, 88%);
+}
+
+/**
+ * change default scrollbar style 
+ */
+
+::-webkit-scrollbar {
+  background: transparent;
+  border-left: 1px solid hsl(218, 39%, 14%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(214, 84%, 56%);
+  border-radius: 5em;
+  border: 3px solid hsl(222, 25%, 10%);
+}
+
+
+
+
+
+/*-------------------------------------*\
+  #REPEAT
+\*-------------------------------------*/
+
+/**
+ * reused style
+ */
+
+
+.navbar,
+/*.banner,---------------------remove*/
+.movies,
+.category{
+  padding: 0 120px;
+}
+
+.section-heading {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 60px;
+
+}
+
+
+
+
+
+/*-------------------------------------*\
+  #MAIN
+\*-------------------------------------*/
+
+/**
+ * main container style 
+ */
+
+
+ /*-------------------------------------*\
+  #Nag add dito
+\*-------------------------------------*/
+.container {
+  max-width: auto;
+    margin: auto;
+    
+}
+
+/*-------------------------------------*\
+  #Profile
+\*-------------------------------------*/
+.profile-container {
+ 
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.profile-text-container {
+  margin: 0 20px;
+}
+.profile-text-container i{
+  padding-left: 10px;
+  position: absolute;
+}
+.profile-picture {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+/*-------------------------------------*\
+  #NAVBAR
+\*-------------------------------------*/
+
+/**
+ * navbar style 
+ */
+
+
+
+
+ /*-------------------------------------*\
+  #dag dag dito
+\*-------------------------------------*/
+header{
+  position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    transition: 0.9s;
+
+}
+
+.navbar {
+  height: 100px;
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  
+}
+/**
+ * small screen menu button style 
+ */
+
+.navbar-menu-btn { display: none; }
+
+/**
+ * navbar navigation style 
+ */
+
+ nav { margin-right: 200px; }
+
+ .navbar-nav {
+  display:flex;
+  column-gap: 4rem;
+
+}
+.navbar-nav li {
+  position: relative;
+
+}
+.navbar-nav a{
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(250, 244, 244);
+}
+.navbar-nav a::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: rgb(241, 239, 238);
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transition: 0.4s all linear;
+}
+.navbar-link:hover { color: hsl(214, 84%, 56%); }
+
+.navbar-nav a:hover::after, .navbar-nav .home-active::after {
+  width: 100%;
+}
+
+
+/**
+ * navbar form & button style 
+ */
+
+.navbar-actions {
+  display:     flex;
+  align-items: center;
+  
+}
+
+.navbar-form {
+  position: relative;
+  margin-right: 50px;
+}
+
+.navbar-form-search {
+  background: none;/* palitan ng border*/
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 15px;
+  color:  hsl(0, 0%, 88%);
+  font-size: 14px;
+  font-weight: 500;
+
+  border: 1px solid white;
+
+  margin-right: 150px;
+
+}
+
+.navbar-form-btn {
+  background: none;
+  position: absolute;
+  top:   calc(50% - 10px);
+  right: 10px;
+  padding-left: 30px;
+}
+
+.navbar-form-btn ion-icon,
+.navbar-search-btn ion-icon {
+  font-size: 20px;
+  color: hsl(214, 84%, 56%);
+  --ionicon-stroke-width: 50px;
+}
+
+.navbar-form-btn:hover ion-icon,
+.navbar-form-search::placeholder { color:  hsl(0, 0%, 88%); }
+
+/**
+ * navbar-form close button & navbar search button
+ * for small device 
+ */
+
+.navbar-form-close,
+.navbar-search-btn { display: none; }
+
+.navbar-brand img{
+  width: 80%;
+  height: 100%;
+}
+
+
+
+/*-------------------------------------*\
+  #BANNER
+\*-------------------------------------*/
+
+/**
+ * banner card style 
+ */
+
+video{
+  width: 100%;
+  height: auto;
+}
+
+.banner-card {
+  padding-top: 40%;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-card {
+  height: max-content;
+  padding-top: unset;
+}
+
+
+
+.banner-card .card-content {
+  position: absolute;
+  right:  80px;
+  bottom: 20%;
+  left:   80px;
+}
+
+.banner-card .card-info {
+  display:     flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.banner-card .card-info div {
+  display:     flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.banner-card .card-info ion-icon {
+  font-size: 20px;
+  color:  hsl(211, 100%, 50%);
+  margin-right: 5px;
+}
+
+.banner-card .card-info span { font-weight: 600; }
+
+.banner-card .card-info .quality {
+  background:  hsl(211, 100%, 50%);
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.banner-card .card-title {
+  font-size: 3rem;
+  color: hsl(0, 0%, 100%);
+  text-shadow: 2px 0 2px #0007;
+}
+
+
+
+
+
+/*-------------------------------------*\
+  #MOIVES SECTION
+\*-------------------------------------*/
+
+.movies { margin-bottom: 60px; }
+
+/**
+ * filter bar style
+ */
+
+.filter-bar {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  background: hsl(218, 39%, 14%);
+  padding: 20px 30px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.filter-bar select {
+  color: hsl(0, 0%, 100%);
+  font-size: 14px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.filter-bar option { background: hsl(218, 39%, 14%); }
+
+.filter-radios {
+  position: relative;
+  background: hsl(222, 25%, 10%);
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.filter-radios input { display: none; }
+
+.filter-radios label {
+  position: relative;
+  margin: 0 10px;
+  font-size: 14px;
+  user-select: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.filter-radios input:checked + label,
+.filter-radios label:hover { color: hsl(214, 84%, 56%); }
+
+input ~ .checked-radio-bg {
+  /**
+   * variable for changing position and size
+   * besed on radio checked 
+   */
+  --width: 85px;
+  --left:   5px;
+
+  background: hsl(218, 39%, 14%);
+  position: absolute;
+  top:    5px;
+  left:   var(--left);
+  bottom: 5px;
+  width: var(--width);
+  border-radius: 10px;
+}
+
+#popular:checked ~ .checked-radio-bg {
+  --width: 73px;
+  --left:  90px;
+}
+
+#newest:checked ~ .checked-radio-bg {
+  --width:  81px;
+  --left:  163px;
+}
+
+
+/**
+ * movies grid 
+ */
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.movie-card {
+  /**
+   * variable for scaling overlay element on card hover 
+   */
+  --scale: 0.8;
+
+  cursor: pointer;
+}
+
+.movie-card .card-head {
+  position: relative;
+  height: 250px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.movie-card:hover .card-img { transform: scale(1.1); }
+
+.movie-card .card-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.movie-card:hover .card-overlay { opacity: 1; }
+
+.movie-card .bookmark,
+.movie-card .rating {
+  position: absolute;
+  top: 15px;
+  padding: 6px;
+  border-radius: 10px;
+  color: hsl(214, 84%, 56%);
+  transform: scale(var(--scale));
+}
+
+.movie-card .bookmark {
+  background: hsl(218, 39%, 14%);
+  left: 15px;
+}
+
+.movie-card .bookmark:hover { color:  hsl(45, 100%, 54%); }
+
+.movie-card .rating {
+  display:     flex;
+  align-items: center;
+  right: 15px;
+  background: hsla(218, 39%, 14%, 0.8);
+}
+
+.movie-card .rating span {
+  color: hsl(0, 0%, 100%);
+  font-size: 13px;
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+.movie-card ion-icon {
+  font-size: 16px;
+  display: block;
+  --ionicon-stroke-width: 50px;
+}
+
+.movie-card .play {
+  position: absolute;
+  top:  50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--scale));
+}
+
+.movie-card .play ion-icon {
+  font-size: 60px;
+  --ionicon-stroke-width: 20px;
+}
+
+.movie-card:hover :is(.bookmark, .rating, .play) { --scale: 1; }
+
+.movie-card .card-title {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.movie-card:hover .card-title { color: hsl(214, 84%, 56%); }
+
+.movie-card .card-info {
+  display: flex;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.movie-card .genre { margin-right: 8px; }
+
+
+/**
+ * load more button 
+ */
+
+.load-more {
+  background: hsl(218, 39%, 14%);
+  display: block;
+  padding: 20px 50px;
+  margin: auto;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 15px;
+  color: hsl(0, 0%, 100%);
+}
+
+.load-more:hover { background: hsl(214, 84%, 56%); }
+
+
+
+
+
+/*-------------------------------------*\
+  #CATEGORY SECTION
+\*-------------------------------------*/
+
+.category { margin-bottom: 60px; }
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.category-card {
+  position: relative;
+  height: 150px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.category-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 20%, #000a);
+}
+
+.category-card:hover .card-img { transform: scale(1.1); }
+
+.category-card .name{
+  position: absolute;
+  bottom: 20px;
+  color: hsl(0, 0%, 100%);
+  z-index: 20;
+}
+
+.category-card .name {
+  left: 20px;
+  font-size: 20px;
+}
+
+
+.category-card:hover .name { color: hsl(214, 84%, 56%); }
+
+
+/*-------------------------------------*\
+  #FOOTER SECTION
+\*-------------------------------------*/
+
+footer {
+  background: hsl(219, 32%, 10%);
+  padding: 80px 120px 40px;
+}
+
+.footer-content {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     flex-start;
+  border-bottom: 1px solid hsla(218, 39%, 14%, 0.8);
+  padding-bottom: 80px;
+}
+
+.footer-brand {
+  max-width: 250px;
+  margin-right: 130px;
+}
+
+.footer-logo {
+  width: 100px;
+  margin-bottom: 30px;
+}
+
+.slogan {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+.social-link a { display: inline-block; }
+
+.social-link ion-icon {
+  font-size: 25px;
+  margin-right: 20px;
+}
+
+.footer-links {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+  align-items: flex-end;
+}
+
+.link-heading { margin-bottom: 20px; }
+
+.link-item { font-size: 14px;}
+
+ul .link-item:not(:last-child) { margin-bottom: 10px; }
+
+.link-item:hover a { color: hsl(214, 84%, 56%);}
+
+
+
+
+
+
+.row__poster {
+  width: 100%;
+  object-fit: contain;
+  max-height: 100px;
+  margin-right: 10px;
+  transition: transform 450ms;
+  border-radius: 10px;
+  border-right: 2px solid gray;
+  border-bottom: 1px solid gray;
+}
+
+.row__posters {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 20px;
+}
+
+.row__posters::-webkit-scrollbar {
+  display: none;
+
+}
+
+.row__posterLarge {
+  max-height: 300px;
+}
+
+.row {
+  margin-left: 20px;
+}
+
+.row_poster:hover{
+  transform: scale(1.1);
+}
+.row__posterLarge:hover{
+  transform: scale(1.5);
+}
+.row__poster .row__posterLarge{
+  display: inline-block;
+}
+
+
+.banner--fadeBottom {
+  margin-top: -140px;
+  height: 10rem;
+  background-image: linear-gradient(180deg, transparent, rgba(1, 1, 2, 0.61), rgb(8, 1, 15));
+  margin-bottom: 30px;
+  position: relative;
+}
